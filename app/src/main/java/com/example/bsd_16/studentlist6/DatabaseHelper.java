@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 	public void onCreate(SQLiteDatabase db) {
 		String s;
 		try {
-			Toast.makeText(context, "1", 2000).show();
+			Toast.makeText(context, "1", Toast.LENGTH_SHORT).show();
 			InputStream in = context.getResources().openRawResource(R.raw.sql);
 			DocumentBuilder builder = DocumentBuilderFactory.newInstance().newDocumentBuilder();
 			Document doc = builder.parse(in, null);
@@ -37,7 +37,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 				db.execSQL(s);
 			}
 		} catch (Throwable t) {
-			Toast.makeText(context, t.toString(), 50000).show();
+			Toast.makeText(context, t.toString(), Toast.LENGTH_LONG).show();
 		}
 	}
 
